@@ -18,20 +18,20 @@ h1{
     margin-top: 10px;
 }
 .rick1{
-    max-width: 25%;
-    max-height: 25%;
+    width: 150px;
+    height: 150px;
 }
 .rick2{
-    max-width: 25%;
-    max-height: 25%;
+    width: 150px;
+    max-height: 150px;
 }
 .rick3{
-    max-width: 25%;
-    max-height: 25%;
+    width: 150px;
+    max-height: 150px;
 }
 .rick4{
-    max-width: 25%;
-    max-height: 25%;
+    width: 150px;
+    max-height: 150px;
 }
 
 .computerNumber{
@@ -40,4 +40,8 @@ h1{
 
 .score{
     background: violet;
+}
+.pic{
+    width: 23%;
+    display: inline-block;
 }
