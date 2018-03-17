@@ -2,10 +2,13 @@
 
 var playerNumber = 0;
 
-
 //Run when page loads
 
 $(document).ready(function(){
+
+//Add the score counter into the "score" div
+var wins = 0;
+var losses = 0;
 
 
 
@@ -13,16 +16,11 @@ $(document).ready(function(){
 
 function startGame(){
 //Add that number into the number to match
-var computerNumber = Math.floor(Math.random() * 50);
-$(".computerNumber").append(computerNumber);
+ computerNumber = Math.floor(Math.random() * 50 + 30);
+$(".computerNumber").html(computerNumber);
 
-//Add the score counter into the "score" div
-var wins = 0;
-var losses = 0;
-
-$(".score").append("Wins: " + wins + "<br>");
-$(".score").append("Losses: " + losses);
-
+$(".score").html("Wins: " + wins + "<br>" + "Losses: " + losses);
+playerNumber = 0;
 };
 //Function to start the game with the above code
 startGame();
@@ -30,18 +28,17 @@ startGame();
 // Next step is to define the buttons as random number generators at the beginning of the game
 
 function assignNumbers(){
- rick1 = Math.floor(Math.random() * 25);
- rick2 = Math.floor(Math.random() * 10);
- rick3 = Math.floor(Math.random() * 5);
- rick4 = Math.floor(Math.random() * 15);
+ rick1 = Math.floor(Math.random() * 25 + 1);
+ rick2 = Math.floor(Math.random() * 10 + 1);
+ rick3 = Math.floor(Math.random() * 5 + 1);
+ rick4 = Math.floor(Math.random() * 15 + 1);
 
 return [rick1 , rick2, rick3, rick4];
 };
 //Assign function value to variable
-var rickNumbers = assignNumbers();
+ var rickNumbers = assignNumbers();
 
 console.log(rickNumbers);
-console.log(rickNumbers[0]);
 
 //Now we add to the playerNumber amount when we click on an image.
 
@@ -60,8 +57,32 @@ $('.rick4').on('click', function() {
     playerNumber = (playerNumber + rickNumbers[3]);
 })
 
+// Inputting the player number into the div
+
 $('.pic').on('click', function(){
 $('.yourNumber').text(playerNumber);
+});
+
+//Now want to compare with if statements when the player loses or wins. Also add a reset button
+
+
+
+$('.rick').on('click', function(){
+    
+if (playerNumber == computerNumber){
+    wins++
+    startGame();
+    assignNumbers();
+    rickNumbers = assignNumbers();
+    console.log(rickNumbers);
+}
+else if (playerNumber > computerNumber){
+    losses++
+    startGame();
+    assignNumbers();
+    rickNumbers = assignNumbers();
+    console.log(rickNumbers);
+}
 });
 
 });
