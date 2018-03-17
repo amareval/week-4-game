@@ -16,7 +16,7 @@ var losses = 0;
 
 function startGame(){
 //Add that number into the number to match
- computerNumber = Math.floor(Math.random() * 50 + 30);
+ computerNumber = Math.floor(Math.random() * 120 + 19);
 $(".computerNumber").html(computerNumber);
 
 $(".score").html("Wins: " + wins + "<br>" + "Losses: " + losses);
@@ -28,10 +28,10 @@ startGame();
 // Next step is to define the buttons as random number generators at the beginning of the game
 
 function assignNumbers(){
- rick1 = Math.floor(Math.random() * 25 + 1);
- rick2 = Math.floor(Math.random() * 10 + 1);
- rick3 = Math.floor(Math.random() * 5 + 1);
- rick4 = Math.floor(Math.random() * 15 + 1);
+ rick1 = Math.floor(Math.random() * 12 + 1);
+ rick2 = Math.floor(Math.random() * 12 + 1);
+ rick3 = Math.floor(Math.random() * 12 + 1);
+ rick4 = Math.floor(Math.random() * 12 + 1);
 
 return [rick1 , rick2, rick3, rick4];
 };
